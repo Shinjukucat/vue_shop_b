@@ -7,6 +7,9 @@ import './assets/css/global.css'
 // 导入字体图标
 import './assets/fonts/iconfont.css'
 
+// 导入树形表格
+import TreeTable from 'vue-table-with-tree-grid'
+
 Vue.config.productionTip = false
 
 import ElementUI from 'element-ui' //element-ui的全部组件
@@ -27,6 +30,8 @@ axios.interceptors.request.use(config => {
 })
 // 下面这句可以实现每一个组件都可以通过this.$http发送ajax请求，即将axios挂载到原型对象上
 Vue.prototype.$http = axios
+
+Vue.component('tree-table', TreeTable)
 
 /* eslint-disable no-new */
 new Vue({

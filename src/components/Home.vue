@@ -38,6 +38,7 @@
               </template>
 
               <!-- 二级菜单区域 -->
+              <!-- 把每个二级菜单的路径绑定到index上 -->
               <el-menu-item :index="'/' + subitem.path" v-for="subitem in item.children" :key="subitem.id" @click="saveNavState('/' + subitem.path)">
                 <template slot="title">
                   <!-- 图标 -->
