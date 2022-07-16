@@ -107,15 +107,17 @@ export default {
       // 添加商品的表单数据对象
       addForm: {
         goods_name: '',
-        goods_price: '0',
-        goods_weight: '0',
-        goods_number: '0',
+        goods_price: 0,
+        goods_weight: 0,
+        goods_number: 0,
         // 级联选择器选中的商品id会保存到该数组中，这个数组也要作为表单提交到数据库
         goods_cat: [],
         // 存储图片临时路径的表单属性
         pics: [],
         // 填写在富文本编辑器里的商品详情
-        goods_introduce: ''
+        goods_introduce: '',
+        // 商品的参数（数组），包含 `动态参数` 和 `静态属性`
+        attrs: []
       },
       addFormRules: {
         goods_name: [
@@ -256,7 +258,7 @@ export default {
         this.manyParamsData.forEach(item => {
           const newInfo = {
             attr_id: item.attr_id,
-            attr_values: item.attr_vals.join(' ')
+            attr_value: item.attr_vals.join(' ')
           }
           this.addForm.attrs.push(newInfo)
         })
@@ -264,7 +266,7 @@ export default {
         this.onlyParamsData.forEach(item => {
           const newInfo = {
             attr_id: item.attr_id,
-            attr_values: item.attr_vals
+            attr_value: item.attr_vals
           }
           this.addForm.attrs.push(newInfo)
         })
