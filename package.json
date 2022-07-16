@@ -13,7 +13,9 @@
     "axios": "^0.27.2",
     "babel-runtime": "^6.26.0",
     "element-ui": "^2.9.2",
+    "lodash": "^4.17.21",
     "vue": "^2.5.2",
+    "vue-quill-editor": "^3.0.6",
     "vue-router": "^3.0.1",
     "vue-table-with-tree-grid": "^0.2.4"
   },

@@ -35,3 +35,14 @@ html, body, #app{
   width: 100px !important
 }
 
+.el-steps {
+  margin: 20px 0;
+}
+
+.el-step__title {
+  font-size: 15px !important
+}
+
+.ql-editor {
+  min-height: 300px;
+}
