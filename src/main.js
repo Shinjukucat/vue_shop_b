@@ -19,7 +19,8 @@ import 'element-ui/lib/theme-chalk/index.css'//element-ui的css
 // 配置axios
 import axios from 'axios'
 // 配置根路径
-axios.defaults.baseURL = 'http://47.108.251.106:8881/api/private/v1/'
+// axios.defaults.baseURL = 'http://47.108.251.106:8881/api/private/v1/'
+axios.defaults.baseURL = 'https://lianghj.top:8888/api/private/v1/'
 // 在将axios挂载到原型对象上之前，给他设置一个拦截器
 // use里面的config就是请求对象，里面包含data、headers等等数据
 axios.interceptors.request.use(config => {
@@ -38,6 +39,7 @@ import VueQuillEditor from 'vue-quill-editor'
 import 'quill/dist/quill.core.css'
 import 'quill/dist/quill.snow.css'
 import 'quill/dist/quill.bubble.css'
+
 
 //注册elementUI为全局可用组件
 Vue.use(ElementUI)

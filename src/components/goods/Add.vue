@@ -280,7 +280,7 @@ export default {
       }
        
       this.$message.success('添加商品成功！');
-      this.$router.push('goods')
+      this.$router.back()
       })
     }
   },
