@@ -1,5 +1,4 @@
 <template>
-  <div>
     <el-container class="home-container">
       <!-- 头部区域 -->
       <el-header>
@@ -57,7 +56,6 @@
         </el-main>
       </el-container>
     </el-container>
-  </div>
 </template>
 
 <script>
@@ -112,7 +110,7 @@ export default {
 
 <style lang="less" scoped>
 .home-container {
-  height: 750px;
+  height: 100%;
 }
 
 /* elementui组件的名称就可以当做它的类名 */

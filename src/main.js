@@ -15,6 +15,9 @@ Vue.config.productionTip = false
 import ElementUI from 'element-ui' //element-ui的全部组件
 import 'element-ui/lib/theme-chalk/index.css'//element-ui的css
 
+// 导入NProgress的包对应的js和css
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 
 // 配置axios
 import axios from 'axios'
@@ -23,12 +26,21 @@ import axios from 'axios'
 axios.defaults.baseURL = 'https://lianghj.top:8888/api/private/v1/'
 // 在将axios挂载到原型对象上之前，给他设置一个拦截器
 // use里面的config就是请求对象，里面包含data、headers等等数据
+// 在request拦截器里加入进度条，就是在发请求的时候展示进度条
 axios.interceptors.request.use(config => {
+  NProgress.start();
   // console.log(config);
   config.headers.Authorization = window.sessionStorage.getItem('token');
   // 在把config请求对象拦截下来后一定要将他return返回回去
   return config;
 })
+
+// 在response拦截器里去除进度条，就是在请求完毕，服务器响应数据的时候将进度条关闭
+axios.interceptors.response.use(config => {
+  NProgress.done();
+  return config;
+})
+
 // 下面这句可以实现每一个组件都可以通过this.$http发送ajax请求，即将axios挂载到原型对象上
 Vue.prototype.$http = axios
 
