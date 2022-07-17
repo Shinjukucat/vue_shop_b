@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^0.27.2",
     "babel-runtime": "^6.26.0",
+    "echarts": "^5.3.3",
     "element-ui": "^2.9.2",
     "lodash": "^4.17.21",
     "vue": "^2.5.2",
