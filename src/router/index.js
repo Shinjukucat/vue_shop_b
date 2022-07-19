@@ -91,7 +91,7 @@ const router = new Router({
   mode: 'history'
 })
 
-// 在暴露路由对象之前给他挂载一个路由导航守卫
+// 在暴露路由对象之前给他挂载一个路由导航守卫，检查是否携带token值
 router.beforeEach((to, from, next) => {
   // to 将要访问的路径
   // from 代表从哪个路径跳转过来
